@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MyApplication</string>
+    <string name="my_notes">My Notes</string>
+    <string name="db_realm">yeniledim-db.realm</string>
+    <string name="first_page">first_page</string>
+    <string name="add_plan">add_plan</string>
+    <string name="edit_plan_id">edit_plan/{id}</string>
+    <string name="plan_editing">Plan Editing</string>
+</resources>
