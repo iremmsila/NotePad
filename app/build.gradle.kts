@@ -68,6 +68,10 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation (libs.accompanist.pager)
+
+
+
 
     // Hilt Bağımlılıkları
     implementation (libs.hilt.android)
@@ -79,6 +83,8 @@ dependencies {
     implementation(libs.androidx.core.i18n)
     implementation(libs.androidx.ui.test.android)
     implementation(libs.androidx.benchmark.macro)
+    implementation(libs.androidx.room.ktx)
+    implementation(libs.androidx.room.runtime.android)
     kapt (libs.dagger.hilt.android.compiler)
 
     // Test bağımlılıkları
