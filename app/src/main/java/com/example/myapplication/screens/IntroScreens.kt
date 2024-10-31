@@ -44,22 +44,39 @@ class IntroScreens : ComponentActivity() {
         setContent {
             MyApplicationTheme {
                 val navController = rememberNavController()
-                // Move getString() call here to ensure the context is available
                 val firstScreenRoute = getString(R.string.first_page)
-                var showOnboarding by remember { mutableStateOf(true) }
 
-                NavHost(
-                    navController = navController,
-                    startDestination = firstScreenRoute
-                ) {
-                    // Onboarding screen route
-                    composable(firstScreenRoute) {
-                        OnboardScreen(
-                            navController = navController,
-                            onboardPages = getOnboardPages(),
-                            applicationContext = applicationContext
-                        )
+                // Retrieve onboarding status from SharedPreferences
+                val sharedPreferences = getSharedPreferences("onboarding_prefs", MODE_PRIVATE)
+                var showOnboarding by remember {
+                    mutableStateOf(sharedPreferences.getBoolean("onboarding_shown", true))
+                }
+
+                if (showOnboarding) {
+                    NavHost(
+                        navController = navController,
+                        startDestination = firstScreenRoute
+                    ) {
+                        // Onboarding screen route
+                        composable(firstScreenRoute) {
+                            OnboardScreen(
+                                navController = navController,
+                                onboardPages = getOnboardPages(),
+                                applicationContext = applicationContext,
+                                onFinish = {
+                                    // Update SharedPreferences to indicate onboarding is completed
+                                    sharedPreferences.edit().putBoolean("onboarding_shown", false).apply()
+                                    showOnboarding = false // Update the state
+                                    startActivity(Intent(applicationContext, MainActivity::class.java))
+                                    finish()
+                                }
+                            )
+                        }
                     }
+                } else {
+                    // Directly navigate to MainActivity if onboarding is already shown
+                    startActivity(Intent(applicationContext, MainActivity::class.java))
+                    finish()
                 }
             }
         }
@@ -121,11 +138,10 @@ class IntroScreens : ComponentActivity() {
             contentDescription = null,
             modifier = modifier
                 .fillMaxWidth()
-                .height((LocalConfiguration.current.screenHeightDp * 0.4).dp), // Görüntü ekran yüksekliğinin %40’ını kaplar
+                .height((LocalConfiguration.current.screenHeightDp * 0.4).dp),
             contentScale = ContentScale.Crop
         )
     }
-
 
     // Onboarding Page Details
     @Composable
@@ -139,7 +155,7 @@ class IntroScreens : ComponentActivity() {
                 style = MaterialTheme.typography.displaySmall,
                 textAlign = TextAlign.Center,
                 modifier = Modifier.fillMaxWidth(),
-                color = Color.White // Text color is white
+                color = Color.White
             )
             Spacer(modifier = Modifier.height(16.dp))
             Text(
@@ -147,7 +163,7 @@ class IntroScreens : ComponentActivity() {
                 style = MaterialTheme.typography.bodyMedium,
                 textAlign = TextAlign.Center,
                 modifier = Modifier.fillMaxWidth(),
-                color = Color.White // Text color is white
+                color = Color.White
             )
         }
     }
@@ -182,14 +198,14 @@ class IntroScreens : ComponentActivity() {
     fun OnboardScreen(
         navController: NavController,
         onboardPages: List<OnboardPage>,
-        applicationContext: Context
+        applicationContext: Context,
+        onFinish: () -> Unit
     ) {
-        val pagerState = rememberPagerState() // Remember the pager state to track the current page
+        val pagerState = rememberPagerState()
         val coroutineScope = rememberCoroutineScope()
         val configuration = LocalConfiguration.current
         val screenWidth = configuration.screenWidthDp.dp
         val screenHeight = configuration.screenHeightDp.dp
-
 
         Box(modifier = Modifier.fillMaxSize()) {
             Column(
@@ -198,7 +214,6 @@ class IntroScreens : ComponentActivity() {
                     .background(Color.Black)
                     .align(Alignment.TopStart)
             ) {
-                // Horizontal Pager for onboarding pages
                 HorizontalPager(
                     state = pagerState,
                     count = onboardPages.size,
@@ -209,7 +224,7 @@ class IntroScreens : ComponentActivity() {
                     Column(
                         modifier = Modifier
                             .fillMaxSize()
-                            .padding(horizontal = (screenWidth * 0.05f)), // Genişliğe göre yatay padding
+                            .padding(horizontal = (screenWidth * 0.05f)),
                         verticalArrangement = Arrangement.Top,
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
@@ -221,7 +236,7 @@ class IntroScreens : ComponentActivity() {
                             currentPage = onboardPages[page]
                         )
 
-                        Spacer(Modifier.height((screenHeight * 0.1f))) // Ekran boyuna göre aralık
+                        Spacer(Modifier.height((screenHeight * 0.1f)))
 
                         OnBoardImageView(
                             modifier = Modifier
@@ -232,26 +247,23 @@ class IntroScreens : ComponentActivity() {
                     }
                 }
 
-                // Tab selector to indicate progress
                 TabSelector(
                     onboardPages = onboardPages,
                     currentPage = pagerState.currentPage
                 ) { page ->
                     coroutineScope.launch {
-                        pagerState.animateScrollToPage(page) // Smooth scroll when clicking on tabs
+                        pagerState.animateScrollToPage(page)
                     }
                 }
             }
 
-            // Floating Action Button to navigate or finish onboarding
             FloatingActionButton(
                 onClick = {
                     coroutineScope.launch {
                         if (pagerState.currentPage < onboardPages.size - 1) {
-                            pagerState.animateScrollToPage(pagerState.currentPage + 1) // Navigate to next page
+                            pagerState.animateScrollToPage(pagerState.currentPage + 1)
                         } else {
-                            startActivity(Intent(applicationContext, MainActivity::class.java))
-                            finish() // Finish onboarding and navigate to MainActivity
+                            onFinish() // Trigger onFinish callback when onboarding completes
                         }
                     }
                 },
@@ -281,10 +293,10 @@ class IntroScreens : ComponentActivity() {
 
     @Preview(showBackground = true)
     @Composable
-    fun GreetingPreviiew() {
+    fun GreetingPreview() {
         MyApplicationTheme {
             val navController = rememberNavController()
-            OnboardScreen(navController, getOnboardPages(), LocalContext.current)
+            OnboardScreen(navController, getOnboardPages(), LocalContext.current, onFinish = {})
         }
     }
 }
