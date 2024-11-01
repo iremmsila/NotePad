@@ -202,10 +202,11 @@ class MainActivity : ComponentActivity() {
 
 
 
-        fun startIntroScreensActivity(context: Context) {
+        fun startIntroScreensActivity(context: Context) {/////////////////////////////////////////////////////////
+            context.getSharedPreferences("onboarding_prefs", Context.MODE_PRIVATE)
+                .edit().putBoolean("onboarding_shown", true).apply()  //bayrak sıfırlandı
             val intent = Intent(context, IntroScreens::class.java)
             context.startActivity(intent)
-
         }
 
 

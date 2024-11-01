@@ -8,7 +8,7 @@ val DividerColor = Color(0xFF007C7E)//Color(0xff8391A9)
 
 val  DarkPrimaryColor = Color(0xFF464945)//Color(0xFF00796b)
 val DarkSecondaryColor = Color(0xFF464945)
-val DarkDividerColor = Color(0xFF000000)//0097a7)
+val DarkDividerColor = Color(0xFF999494)//0097a7)
 
 
 val Critical = Color(0xB3FF0000)
