@@ -239,7 +239,7 @@ fun EditPlan(navController: NavController, id: Long) {
             ) {
                 // Name TextField
                 TextField(
-                    textStyle = TextStyle(color = MaterialTheme.colorScheme.surface),
+                    textStyle = TextStyle(color = MaterialTheme.colorScheme.onSurface),
                     value = name,
                     onValueChange = { name = it },
                     label = {
@@ -263,7 +263,7 @@ fun EditPlan(navController: NavController, id: Long) {
 
                 // Surname TextField
                 TextField(
-                    textStyle = TextStyle(color = MaterialTheme.colorScheme.surface),
+                    textStyle = TextStyle(color = MaterialTheme.colorScheme.onSurface),
                     value = surname,
                     onValueChange = { surname = it },
                     label = {
@@ -284,9 +284,9 @@ fun EditPlan(navController: NavController, id: Long) {
                 )
 
                 Row(
-                    modifier = Modifier
-                        .fillMaxWidth(),
-                    horizontalArrangement = Arrangement.Start,
+//                    modifier = Modifier
+//                        .fillMaxWidth(),
+                    horizontalArrangement = Arrangement.Center,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     // IconButton with selected color

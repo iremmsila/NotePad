@@ -298,6 +298,7 @@ fun MainScreen(
                                             confirmButton = {
                                                 Button(
                                                     onClick = {
+                                                        selectedDayFilter = customDayValue.toIntOrNull() ?: 0
                                                         showDialog = false
                                                         expanded = false
                                                     }
@@ -529,7 +530,7 @@ fun MainScreen(
             // Search bar
             TextField(
                 shape = RoundedCornerShape(26.dp),
-                textStyle = TextStyle(MaterialTheme.colorScheme.surface),
+                textStyle = TextStyle(MaterialTheme.colorScheme.onSurface),
                 colors = TextFieldDefaults.textFieldColors(
                     containerColor = MaterialTheme.colorScheme.background,
                     focusedIndicatorColor = Color.Transparent,
