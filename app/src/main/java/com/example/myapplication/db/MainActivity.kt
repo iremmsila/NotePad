@@ -15,6 +15,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
@@ -26,16 +27,12 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 import androidx.navigation.compose.composable
-import androidx.room.util.copy
 import com.example.myapplication.screens.EditPlan
 import com.example.myapplication.helper.PersonDetailEntity
 import com.example.myapplication.R
 import com.example.myapplication.ui.theme.DividerColor
 import com.example.myapplication.ui.theme.MyApplicationTheme
 import kotlinx.coroutines.withContext
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
-import androidx.compose.ui.platform.LocalContext
 import com.example.myapplication.screens.IntroScreens
 import com.example.myapplication.screens.MainScreen
 
@@ -64,7 +61,7 @@ class MainActivity : ComponentActivity() {
                 val navController = rememberNavController()
                 Scaffold(
                     modifier = Modifier.fillMaxSize(),
-                    containerColor = DividerColor,
+                    containerColor = MaterialTheme.colorScheme.tertiary,
                     content = { innerPadding ->
                         Box(modifier = Modifier.padding(innerPadding)) {
                             NavHost(

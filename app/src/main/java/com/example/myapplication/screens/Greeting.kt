@@ -165,7 +165,8 @@ fun MainScreen(
                         text = stringResource(R.string.my_notes),
                         fontSize = 20.sp,
                         modifier = Modifier.fillMaxWidth(),
-                        textAlign = TextAlign.Center
+                        textAlign = TextAlign.Center,
+                        color = MaterialTheme.colorScheme.onSurface
                     )
                 },
                 navigationIcon = {
@@ -175,13 +176,13 @@ fun MainScreen(
                         Icon(
                             imageVector = Icons.Default.ArrowDropDown,
                             contentDescription = stringResource(R.string.days),
-                            tint = MaterialTheme.colorScheme.surface
+                            tint = MaterialTheme.colorScheme.onSurface
                         )
                     }
                     DropdownMenu(
                         expanded = expanded,
                         onDismissRequest = { expanded = false },
-                        modifier = Modifier.background(MaterialTheme.colorScheme.onSurface)
+                        modifier = Modifier.background(MaterialTheme.colorScheme.surface)
                     ) {
                         DropdownMenuItem(
                             text = {
@@ -196,7 +197,7 @@ fun MainScreen(
                                     )
                                     Text(text = stringResource(R.string._3_g_n),
                                         fontSize = 12.sp,
-                                        color = MaterialTheme.colorScheme.surface)
+                                        color = MaterialTheme.colorScheme.onSurface)
                                 }
                             },
                             onClick = {
@@ -217,7 +218,7 @@ fun MainScreen(
                                     )
                                     Text(text = stringResource(R.string._5_g_n),
                                         fontSize = 12.sp,
-                                        color = MaterialTheme.colorScheme.surface)
+                                        color = MaterialTheme.colorScheme.onSurface)
                                 }
                             },
                             onClick = {
@@ -238,7 +239,7 @@ fun MainScreen(
                                     )
                                     Text(text = stringResource(R.string._7_g_n),
                                         fontSize = 12.sp,
-                                        color = MaterialTheme.colorScheme.surface)
+                                        color = MaterialTheme.colorScheme.onSurface)
                                 }
                             },
                             onClick = {
@@ -260,15 +261,15 @@ fun MainScreen(
                                             showDialog = true
                                         }, // Show the dialog when the button is clicked
                                         colors = ButtonDefaults.buttonColors(
-                                            containerColor = Color.LightGray,
-                                            contentColor = Color.Black
+                                            containerColor = MaterialTheme.colorScheme.tertiary,
+                                            contentColor = MaterialTheme.colorScheme.tertiary //black?
                                         ),
                                         shape = RoundedCornerShape(8.dp),
                                         modifier = Modifier.padding(start = 8.dp) // Adds some spacing between the Row and the Button
                                     ) {
                                         Text(text = stringResource(R.string.custom),
                                             fontSize = 10.sp,
-                                            color = MaterialTheme.colorScheme.onSurface)
+                                            color = MaterialTheme.colorScheme.surface)
                                     }
 
                                     // Optional: A dialog to input the custom day value
@@ -328,19 +329,19 @@ fun MainScreen(
                         Icon(
                             imageVector = Icons.Outlined.Info, // Use any icon of your choice
                             contentDescription = stringResource(R.string.intro),
-                            tint = Color.White
+                            tint = MaterialTheme.colorScheme.onSurface
                         )
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.onSurface,
-                    titleContentColor = Color.White
+                    containerColor = MaterialTheme.colorScheme.surface,
+                    titleContentColor = MaterialTheme.colorScheme.surface
                 )
             )
         },
 
-        containerColor = MaterialTheme.colorScheme.onBackground,
-        contentColor = DividerColor,
+        containerColor = MaterialTheme.colorScheme.background,
+        contentColor = MaterialTheme.colorScheme.tertiary,
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {
@@ -352,7 +353,7 @@ fun MainScreen(
                 },
                 Modifier.size(56.dp),
                 shape = CircleShape,
-                containerColor = Color.Gray
+                containerColor = MaterialTheme.colorScheme.tertiary //gray
             ) {
                 Icon(
                     Icons.Filled.Add,
@@ -387,7 +388,7 @@ fun MainScreen(
                 "THOSE WHOSE DAY IS APPROACHING",
                 style = TextStyle(
                     fontWeight = FontWeight.Bold,
-                    color = Color.DarkGray,
+                    color = MaterialTheme.colorScheme.secondary,
                     fontSize = 15.sp
                 ),
                 modifier = Modifier.padding(16.dp)
@@ -409,7 +410,7 @@ fun MainScreen(
                         ) {
                             Text(
                                 text = stringResource(R.string.no_items_available),
-                                color = Color.Gray,
+                                color = MaterialTheme.colorScheme.tertiary,
                                 fontSize = 18.sp
                             )
                         }
@@ -421,7 +422,7 @@ fun MainScreen(
                             "Critical" -> Color(Critical.value)
                             "Important" -> Color(Important.value)
                             "Normal" -> Color(Normal.value)
-                            else -> MaterialTheme.colorScheme.surface
+                            else -> MaterialTheme.colorScheme.onSurface
                         }
 
                         val daysLeft = calculateDaysBetween(
@@ -441,7 +442,7 @@ fun MainScreen(
                                 },
                             shape = RoundedCornerShape(15.dp),
                             colors = CardDefaults.cardColors(
-                                containerColor = MaterialTheme.colorScheme.onSurface
+                                containerColor = MaterialTheme.colorScheme.surface
                             ),
                         ) {
                             Row(
@@ -468,7 +469,7 @@ fun MainScreen(
                                         text = "${person.namee}",
                                         fontWeight = FontWeight.Bold,
                                         fontSize = 18.sp,
-                                        color = MaterialTheme.colorScheme.surface
+                                        color = MaterialTheme.colorScheme.onSurface
                                     )
                                 }
 
@@ -477,7 +478,7 @@ fun MainScreen(
                                         imageVector = Icons.Default.Warning,
                                         contentDescription = stringResource(R.string.past_date_warning),
                                         modifier = Modifier.size(15.dp),
-                                        tint = Color.Red // Uyarı ikonu için kırmızı renk
+                                        tint = Critical // Uyarı ikonu için kırmızı renk //red
                                     )
                                 }
                             }
@@ -528,12 +529,12 @@ fun MainScreen(
             // Search bar
             TextField(
                 shape = RoundedCornerShape(26.dp),
-                textStyle = TextStyle(Color.White),
+                textStyle = TextStyle(MaterialTheme.colorScheme.surface),
                 colors = TextFieldDefaults.textFieldColors(
-                    containerColor = Color.DarkGray,
+                    containerColor = MaterialTheme.colorScheme.background,
                     focusedIndicatorColor = Color.Transparent,
                     unfocusedIndicatorColor = Color.Transparent,
-                    cursorColor = MaterialTheme.colorScheme.surface,
+                    cursorColor = MaterialTheme.colorScheme.onSurface,
                 ),
                 modifier = Modifier
                     .fillMaxWidth()
@@ -549,12 +550,12 @@ fun MainScreen(
                             imageVector = Icons.Default.Search,
                             contentDescription = stringResource(R.string.search_icon),
                             modifier = Modifier.size(20.dp),
-                            tint = MaterialTheme.colorScheme.surface
+                            tint = MaterialTheme.colorScheme.onSurface
                         )
                         Spacer(Modifier.width(8.dp))
                         Text(
                             text = stringResource(R.string.search_for_notes),
-                            color = MaterialTheme.colorScheme.surface
+                            color = MaterialTheme.colorScheme.onSurface
                         )
                     }
                 }
@@ -573,7 +574,7 @@ fun MainScreen(
                         "Critical" -> Color(Critical.value)
                         "Important" -> Color(Important.value)
                         "Normal" -> Color(Normal.value)
-                        else -> Color.Gray
+                        else -> MaterialTheme.colorScheme.primary
                     }
 
                     val isSelected = selectedFilter.value == filter
@@ -581,7 +582,7 @@ fun MainScreen(
                     val textColor =
                         if (isSelected) MaterialTheme.colorScheme.onSurface else buttonColor
                     val borderColor =
-                        if (isSelected) MaterialTheme.colorScheme.onSurface else buttonColor
+                        if (isSelected) MaterialTheme.colorScheme.surface else buttonColor
 
                     SuggestionChip(
                         onClick = { selectedFilter.value = filter },
@@ -639,8 +640,8 @@ fun MainScreen(
                                 modifier = Modifier
                                     .fillMaxWidth(0.8f)
                                     .padding(horizontal = 8.dp),
-                                containerColor = MaterialTheme.colorScheme.primary,
-                                contentColor = MaterialTheme.colorScheme.onPrimary
+                                containerColor = MaterialTheme.colorScheme.onPrimary,
+                                contentColor = MaterialTheme.colorScheme.primary
                             )
                         },
                     )
@@ -656,7 +657,7 @@ fun MainScreen(
                               }
                           )
                       },*/
-                containerColor = MaterialTheme.colorScheme.onBackground,
+                containerColor = MaterialTheme.colorScheme.background,
             ) { paddingValues ->
                 // LazyColumn for showing filtered items vertically
                 LazyColumn(
@@ -737,7 +738,7 @@ fun MainScreen(
                                 "Critical" -> Color(Critical.value)
                                 "Important" -> Color(Important.value)
                                 "Normal" -> Color(Normal.value)
-                                else -> MaterialTheme.colorScheme.surface
+                                else -> MaterialTheme.colorScheme.onSurface
                             }
                             val daysLeft = calculateDaysBetween(
                                 person.selectedOptionn ?: ""
@@ -749,7 +750,7 @@ fun MainScreen(
                                     .padding(16.dp),
                                 shape = RoundedCornerShape(12.dp),
                                 colors = CardDefaults.cardColors(
-                                    containerColor = MaterialTheme.colorScheme.onSurface
+                                    containerColor = MaterialTheme.colorScheme.surface
                                 ),
                             ) {
                                 Row(
@@ -776,7 +777,7 @@ fun MainScreen(
                                             text = "${person.namee}",
                                             fontWeight = FontWeight.Bold,
                                             fontSize = 22.sp,
-                                            color = MaterialTheme.colorScheme.surface,
+                                            color = MaterialTheme.colorScheme.onSurface,
                                             maxLines = 1, // Metni 1 satırla sınırlandır
                                             overflow = TextOverflow.Ellipsis // 3 nokta ile kesilme
                                         )
@@ -785,7 +786,7 @@ fun MainScreen(
                                             text = "${person.surnamee}",
                                             fontWeight = FontWeight.Light,
                                             fontSize = 20.sp,
-                                            color = MaterialTheme.colorScheme.surface,
+                                            color = MaterialTheme.colorScheme.onSurface,
                                             maxLines = 1, // Metni 1 satırla sınırlandır
                                             overflow = TextOverflow.Ellipsis // 3 nokta ile kesilme
                                         )
@@ -805,7 +806,7 @@ fun MainScreen(
                                             text = it,
                                             fontWeight = FontWeight.Light,
                                             fontSize = 18.sp,
-                                            color = MaterialTheme.colorScheme.surface,
+                                            color = MaterialTheme.colorScheme.onSurface,
                                             maxLines = 1, // Metni 1 satırla sınırlandır
                                             overflow = TextOverflow.Ellipsis // 3 nokta ile kesilme
                                         )

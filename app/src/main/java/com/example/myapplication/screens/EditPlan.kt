@@ -114,27 +114,32 @@ fun EditPlan(navController: NavController, id: Long) {
         topBar = {
             TopAppBar(
                 title = {
-                    Text(
-                        text = if (id == -1L) stringResource(R.string.add_plan) else stringResource(
-                            R.string.plan_editing
-                        ),
-                        fontSize = 20.sp,
+                    Box(
                         modifier = Modifier.fillMaxWidth(),
-                        textAlign = TextAlign.Center
-                    )
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(
+                            text = if (id == -1L) stringResource(R.string.plan_add) else stringResource(R.string.plan_editing),
+                            fontSize = 20.sp,
+                            textAlign = TextAlign.Center
+                        )
+                    }
+                },
+                actions = {
+                    Spacer(modifier = Modifier.width(68.dp)) // Adjust width based on your needs
                 },
                 navigationIcon = {
                     IconButton(onClick = { navController.popBackStack() }) {
                         Icon(
                             Icons.Default.ArrowBack,
                             contentDescription = stringResource(R.string.back),
-                            tint = MaterialTheme.colorScheme.surface
+                            tint = MaterialTheme.colorScheme.onSurface
                         )
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.onSurface,
-                    titleContentColor = MaterialTheme.colorScheme.surface
+                    containerColor = MaterialTheme.colorScheme.surface,
+                    titleContentColor = MaterialTheme.colorScheme.onSurface
                 )
             )
         },
@@ -190,7 +195,7 @@ fun EditPlan(navController: NavController, id: Long) {
                 )
             }
         },
-        containerColor = MaterialTheme.colorScheme.onBackground,
+        containerColor = MaterialTheme.colorScheme.background,
         content = { innerPadding ->
             LaunchedEffect(id) {
                 // personDetail güncelleme
@@ -234,13 +239,13 @@ fun EditPlan(navController: NavController, id: Long) {
             ) {
                 // Name TextField
                 TextField(
-                    textStyle = TextStyle(color = Color.White),
+                    textStyle = TextStyle(color = MaterialTheme.colorScheme.surface),
                     value = name,
                     onValueChange = { name = it },
                     label = {
                         Text(
                             text = stringResource(R.string.enter_title),
-                            color = if (isNameError) Color.Red else MaterialTheme.colorScheme.surface
+                            color = if (isNameError) Color.Red else MaterialTheme.colorScheme.onSurface
                         )
                     },
                     isError = isNameError,
@@ -250,7 +255,7 @@ fun EditPlan(navController: NavController, id: Long) {
                         .weight(2f)
                         .fillMaxWidth(),
                     colors = TextFieldDefaults.textFieldColors(
-                        containerColor = MaterialTheme.colorScheme.onBackground,
+                        containerColor = MaterialTheme.colorScheme.background,
                         focusedIndicatorColor = Color.Transparent,
                         unfocusedIndicatorColor = Color.Transparent,
                     ),
@@ -258,13 +263,13 @@ fun EditPlan(navController: NavController, id: Long) {
 
                 // Surname TextField
                 TextField(
-                    textStyle = TextStyle(color = Color.White),
+                    textStyle = TextStyle(color = MaterialTheme.colorScheme.surface),
                     value = surname,
                     onValueChange = { surname = it },
                     label = {
                         Text(
                             text = stringResource(R.string.enter_content),
-                            color = if (isSurnameError) Color.Red else MaterialTheme.colorScheme.surface
+                            color = if (isSurnameError) Color.Red else MaterialTheme.colorScheme.onSurface
                         )
                     },
                     isError = isSurnameError,
@@ -272,7 +277,7 @@ fun EditPlan(navController: NavController, id: Long) {
                         .weight(10f)
                         .fillMaxWidth(),
                     colors = TextFieldDefaults.textFieldColors(
-                        containerColor = MaterialTheme.colorScheme.onBackground,
+                        containerColor = MaterialTheme.colorScheme.background,
                         focusedIndicatorColor = Color.Transparent,
                         unfocusedIndicatorColor = Color.Transparent
                     ),

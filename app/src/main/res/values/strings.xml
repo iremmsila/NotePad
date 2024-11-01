@@ -6,6 +6,7 @@
     <string name="add_plan">add_plan</string>
     <string name="edit_plan_id">edit_plan/{id}</string>
     <string name="plan_editing">Plan Editing</string>
+    <string name="plan_add">Add Plan</string>
     <string name="save_page">save_page</string>
     <string name="back">Back</string>
     <string name="critical">Critical</string>

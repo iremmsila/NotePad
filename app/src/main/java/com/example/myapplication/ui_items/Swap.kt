@@ -127,7 +127,7 @@ fun SwipeToDismissItem(
                 targetValue = when (swipeToDismissState.targetValue) {
                     SwipeToDismissBoxValue.StartToEnd -> Color(0xBD8BD54B)
                     SwipeToDismissBoxValue.EndToStart -> Color(0xB3FC3131)
-                    else -> MaterialTheme.colorScheme.onBackground
+                    else -> MaterialTheme.colorScheme.background
                 }
             )
 
@@ -142,7 +142,7 @@ fun SwipeToDismissItem(
                     Icon(
                         imageVector = Icons.Default.Edit,
                         contentDescription = null,
-                        tint = Color.White,
+                        tint = MaterialTheme.colorScheme.surface,
                         modifier = Modifier
                             .align(Alignment.CenterStart)
                             .size(36.dp)
@@ -152,7 +152,7 @@ fun SwipeToDismissItem(
                     Icon(
                         imageVector = Icons.Default.Delete,
                         contentDescription = null,
-                        tint = Color.White,
+                        tint = MaterialTheme.colorScheme.surface,
                         modifier = Modifier
                             .align(Alignment.CenterEnd)
                             .size(36.dp)
