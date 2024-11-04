@@ -191,7 +191,8 @@ fun EditPlan(navController: NavController, id: Long) {
             ) {
                 Icon(
                     imageVector = Icons.Default.Check,
-                    contentDescription = stringResource(R.string.update)
+                    contentDescription = stringResource(R.string.update),
+                    tint = MaterialTheme.colorScheme.surface
                 )
             }
         },

@@ -147,7 +147,7 @@ class IntroScreens : ComponentActivity() {
     @Composable
     fun OnBoardDetails(modifier: Modifier = Modifier, currentPage: OnboardPage) {
         Column(
-            modifier = Modifier.background(Color.Black)
+            modifier = Modifier.background(MaterialTheme.colorScheme.background)
         ) {
             Spacer(modifier = Modifier.padding(36.dp))
             Text(
@@ -155,7 +155,7 @@ class IntroScreens : ComponentActivity() {
                 style = MaterialTheme.typography.displaySmall,
                 textAlign = TextAlign.Center,
                 modifier = Modifier.fillMaxWidth(),
-                color = Color.White
+                color = MaterialTheme.colorScheme.onBackground
             )
             Spacer(modifier = Modifier.height(16.dp))
             Text(
@@ -163,7 +163,7 @@ class IntroScreens : ComponentActivity() {
                 style = MaterialTheme.typography.bodyMedium,
                 textAlign = TextAlign.Center,
                 modifier = Modifier.fillMaxWidth(),
-                color = Color.White
+                color = MaterialTheme.colorScheme.onBackground
             )
         }
     }
@@ -179,14 +179,14 @@ class IntroScreens : ComponentActivity() {
             selectedTabIndex = currentPage,
             modifier = Modifier
                 .fillMaxWidth()
-                .background(Color.Black),
-            contentColor = Color.Black
+                .background(MaterialTheme.colorScheme.background),
+            contentColor = MaterialTheme.colorScheme.background
         ) {
             onboardPages.forEachIndexed { index, _ ->
                 Tab(
                     selected = index == currentPage,
                     onClick = { onTabSelected(index) },
-                    modifier = Modifier.background(Color.Black)
+                    modifier = Modifier.background(MaterialTheme.colorScheme.background)
                 )
             }
         }
@@ -211,7 +211,7 @@ class IntroScreens : ComponentActivity() {
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-                    .background(Color.Black)
+                    .background(MaterialTheme.colorScheme.background)
                     .align(Alignment.TopStart)
             ) {
                 HorizontalPager(
@@ -278,13 +278,13 @@ class IntroScreens : ComponentActivity() {
                     Icon(
                         Icons.Filled.KeyboardArrowRight,
                         contentDescription = stringResource(R.string.next),
-                        tint = Color.White
+                        tint = MaterialTheme.colorScheme.onBackground
                     )
                 } else {
                     Icon(
                         Icons.Filled.Check,
                         contentDescription = stringResource(R.string.finish),
-                        tint = Color.White
+                        tint = MaterialTheme.colorScheme.onBackground
                     )
                 }
             }

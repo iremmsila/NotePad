@@ -46,7 +46,7 @@ class SplashScreenActivity : ComponentActivity() {
 
                 Scaffold(
                     modifier = Modifier.fillMaxSize(),
-                    containerColor = Color.Black,
+                    containerColor = MaterialTheme.colorScheme.background,
                     content = { innerPadding ->
                         Box(modifier = Modifier.padding(innerPadding)) {
                             NavHost(
@@ -80,7 +80,7 @@ class SplashScreenActivity : ComponentActivity() {
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .background(Color.Black),
+                .background(MaterialTheme.colorScheme.background),
             contentAlignment = Alignment.Center
         ) {
             Image(
