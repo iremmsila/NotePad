@@ -1,8 +1,8 @@
+
 <resources>
-    <string name="app_name">MyApplication</string>
+<string name="app_name">NotepadMVVM</string>
+<string name="first_page">first_page</string>
     <string name="my_notes">My Notes</string>
-    <string name="db_realm">yeniledim-db.realm</string>
-    <string name="first_page">first_page</string>
     <string name="add_plan">add_plan</string>
     <string name="edit_plan_id">edit_plan/{id}</string>
     <string name="plan_editing">Plan Editing</string>
@@ -49,7 +49,7 @@
     <string name="next">Next</string>
     <string name="finish">Finish</string>
     <string name="logo">Logo</string>
-    <string name="yeniledim_db_realm">yeniledim-db.realm</string>
+    <string name="yeniledim_db_realm">yeni-db.realm</string>
     <string name="please_select_a_date_from_today_onward">Please select a date from today onward</string>
     <string name="confirm_deletion">Confirm Deletion</string>
     <string name="select_importance">select importance</string>
@@ -57,5 +57,6 @@
     <string name="delete">Delete</string>
     <string name="intro">intro</string>
     <string name="intro_info">intro_info</string>
-
+    <string name="day_option">%1$d gün</string>
+    <string name="those_whose_day_is_approaching">THOSE WHOSE DAY IS APPROACHING</string>
 </resources>
