@@ -1,6 +1,10 @@
 Splash Ekranı:
+
 ![image](https://github.com/user-attachments/assets/9a133d8c-19a5-4b77-b7f6-7d8d4f6a8199)
 
+İntro ekranları kullanıcıya 1 kereye mahsus gösterilir. Sonrasında Uygulama içerisinde geri dönülebilir.
+
+![image](https://github.com/user-attachments/assets/4d9649fb-2c88-4a7d-b421-aacc6d881fb5)
 
 Notların Önceliklendirilmesi:
 Notların öncelik derecesine göre sıralanmasını sağladım. Renklerle ifade edilen önem dereceleri şu şekilde tanımlandı:
