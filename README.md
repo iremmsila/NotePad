@@ -2,9 +2,13 @@ Splash Ekranı:
 
 ![image](https://github.com/user-attachments/assets/9a133d8c-19a5-4b77-b7f6-7d8d4f6a8199)
 
-İntro ekranları kullanıcıya 1 kereye mahsus gösterilir. Sonrasında Uygulama içerisinde geri dönülebilir.
+İntro ekranları kullanıcıya 1 kereye mahsus gösterilir.
 
 ![image](https://github.com/user-attachments/assets/4d9649fb-2c88-4a7d-b421-aacc6d881fb5)
+
+ Sonrasında Uygulama içerisinde geri dönülebilir. Notlar arasında arama işlemi yapılabilir.
+
+![image](https://github.com/user-attachments/assets/488a6efc-d901-410d-bf41-98fc82770035)
 
 Notların Önceliklendirilmesi:
 Notların öncelik derecesine göre sıralanmasını sağladım. Renklerle ifade edilen önem dereceleri şu şekilde tanımlandı:
@@ -28,7 +32,7 @@ o	Filtreleme butonları ile notların belirli kategorilere ayrılmasını sağla
 
 
 
-![image](https://github.com/user-attachments/assets/488a6efc-d901-410d-bf41-98fc82770035)
+
 ![image](https://github.com/user-attachments/assets/aeb56702-7b19-40cf-905c-325b89007951)
 ![image](https://github.com/user-attachments/assets/e7c24bb1-3c68-4a77-ad27-0188ca0a6f4b)
 
