@@ -1,3 +1,7 @@
+Splash Ekranı:
+![image](https://github.com/user-attachments/assets/9a133d8c-19a5-4b77-b7f6-7d8d4f6a8199)
+
+
 Notların Önceliklendirilmesi:
 Notların öncelik derecesine göre sıralanmasını sağladım. Renklerle ifade edilen önem dereceleri şu şekilde tanımlandı:
 Kırmızı: Yüksek öncelikli notlar.
@@ -18,7 +22,7 @@ o	Filtreleme butonları ile notların belirli kategorilere ayrılmasını sağla
 ![image](https://github.com/user-attachments/assets/16326f40-9657-4f00-ac53-add73fa2f9e1)
 ![image](https://github.com/user-attachments/assets/53152a68-a917-46e0-901c-449c36b4e7be)
 
-![image](https://github.com/user-attachments/assets/9a133d8c-19a5-4b77-b7f6-7d8d4f6a8199)
+
 
 ![image](https://github.com/user-attachments/assets/488a6efc-d901-410d-bf41-98fc82770035)
 ![image](https://github.com/user-attachments/assets/aeb56702-7b19-40cf-905c-325b89007951)
