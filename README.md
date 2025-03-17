@@ -52,8 +52,6 @@ o	Kullanıcı herhangi bir işlem yapmazsa: Veri kalıcı olarak siliniyor.
 
 Bu özellik sayesinde, kullanıcılar veri silme işlemini tamamen kontrol edebiliyor ve yanlışlıkla yapılan silme işlemlerini geri alabiliyor. Aynı zamanda kullanıcı deneyimi daha güvenli ve interaktif bir hale getirilmiş oldu.
 
-![image](https://github.com/user-attachments/assets/ee4bba26-338e-4a06-ae0e-3e7e6ca113c0)
-
-![image](https://github.com/user-attachments/assets/8cb870d2-453f-4741-becb-e4306a60309b)
+![image](https://github.com/user-attachments/assets/ee4bba26-338e-4a06-ae0e-3e7e6ca113c0)     ![image](https://github.com/user-attachments/assets/8cb870d2-453f-4741-becb-e4306a60309b)
 
 
