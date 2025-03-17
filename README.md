@@ -1,3 +1,24 @@
+Notların Önceliklendirilmesi:
+Notların öncelik derecesine göre sıralanmasını sağladım. Renklerle ifade edilen önem dereceleri şu şekilde tanımlandı:
+Kırmızı: Yüksek öncelikli notlar.
+Turuncu: Orta öncelikli notlar.
+Sarı: Düşük öncelikli notlar.
+
+Tarihe Göre Filtreleme:
+o	Günlük görevleri daha verimli takip edebilmek için günü geçen veya az kalan notları filtreleme sistemine ekledim. Bu notlar uygulamanın en üst kısmında bir LazyRow içerisinde gösterildi.
+Arama ve Kategorize Etme:
+o	Uygulamada, kullanıcıların notlar arasında hızlıca arama yapabilmesi için bir arama çubuğu ekledim.
+o	Filtreleme butonları ile notların belirli kategorilere ayrılmasını sağladım. Bu özellik sayesinde kullanıcı, yalnızca belirli bir kategoriye ait notları görüntüleyebiliyor.
+
+•	Dropdown Menü Tasarımı: Jetpack Compose'un DropdownMenu bileşeni kullanılarak filtre seçeneklerini içeren bir menü tasarladım.
+•	Filtreleme Lojik Kurgusu: ViewModel'de filtreleme kriterlerini belirleyerek kullanıcı seçimlerine göre listeyi dinamik olarak güncelledim.
+•	Filtreleme sonucunun LazyRow bileşeni üzerinde doğru şekilde görüntülenmesini sağladım. Bu özellikler, kullanıcı deneyimini artırarak not yönetimini daha etkili ve kolay bir hale getirdi.  
+
+
+![image](https://github.com/user-attachments/assets/16326f40-9657-4f00-ac53-add73fa2f9e1)
+![image](https://github.com/user-attachments/assets/53152a68-a917-46e0-901c-449c36b4e7be)
+
+![image](https://github.com/user-attachments/assets/9a133d8c-19a5-4b77-b7f6-7d8d4f6a8199)
 
 ![image](https://github.com/user-attachments/assets/488a6efc-d901-410d-bf41-98fc82770035)
 ![image](https://github.com/user-attachments/assets/aeb56702-7b19-40cf-905c-325b89007951)
