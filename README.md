@@ -30,10 +30,12 @@ o	Filtreleme butonları ile notların belirli kategorilere ayrılmasını sağla
 ![image](https://github.com/user-attachments/assets/16326f40-9657-4f00-ac53-add73fa2f9e1)
 ![image](https://github.com/user-attachments/assets/53152a68-a917-46e0-901c-449c36b4e7be)
 
-
-
+Yeni bir not ekleme ekranı:
 
 ![image](https://github.com/user-attachments/assets/aeb56702-7b19-40cf-905c-325b89007951)
+
+Günü geçmiş notlar bir uyarı işareti ile kullanıcıya gösterilir.
+
 ![image](https://github.com/user-attachments/assets/e7c24bb1-3c68-4a77-ad27-0188ca0a6f4b)
 
 Veri Silme ve Geri Alma İşlevi: Bu hafta, uygulamaya kullanıcı dostu bir veri silme ve geri alma mekanizması ekledim. Özellik şu şekilde çalışıyor:
