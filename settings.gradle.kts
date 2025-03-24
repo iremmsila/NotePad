@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "MyApplication"
+rootProject.name = "NotepadMVVM"
 include(":app")
  
