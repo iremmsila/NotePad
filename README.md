@@ -1,3 +1,4 @@
+
 Splash Ekranı:
 
 ![image](https://github.com/user-attachments/assets/9a133d8c-19a5-4b77-b7f6-7d8d4f6a8199)
